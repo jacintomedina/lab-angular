@@ -1,0 +1,29 @@
+<div>
+    <label>Search by name: </label>
+    <input (formControl)="filterControl" type="text" placeholder="Search...">
+</div>
+
+<table>
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Name</th>
+      <th>Email</th>
+    </tr>
+  </thead>
+  <tbody>
+    @for (user of users(); track user.id) {
+      <tr>
+        <td>
+          <span>{{user.id}}</span>
+        </td>
+        <td>
+          <span>{{user.name}}</span>
+        </td>
+        <td>
+          <span>{{user.email}}</span>
+        </td>
+      </tr>
+    }
+  </tbody>
+</table>

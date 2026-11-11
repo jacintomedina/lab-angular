@@ -1,0 +1,21 @@
+table {
+  width: 100%;
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+th {
+  background-color: #f2f2f2; /* Color de fondo del encabezado */
+  padding: 10px;
+  text-align: left;
+}
+
+td {
+  padding: 10px;
+  border-bottom: 1px solid #ddd; /* Línea divisoria entre filas */
+}
+
+tbody tr:nth-child(odd) {
+  background-color: #f9f9f9; /* Fondo alternativo para filas impares */
+}
