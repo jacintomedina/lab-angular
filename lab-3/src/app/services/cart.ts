@@ -22,7 +22,7 @@ export class Cart {
 
     if (existing) {
       this._items$.next(
-        items.map((i) => (i.id === item.id ? { ...i, quantity: i.quantity + i.quantity } : i)),
+        items.map((i) => (i.id === item.id ? { ...i, quantity: i.quantity + item.quantity } : i)),
       );
     } else {
       this._items$.next([...items, item]);
