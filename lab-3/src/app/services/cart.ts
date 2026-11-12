@@ -16,16 +16,16 @@ export class Cart {
     map((items) => items.reduce((total, item) => total + item.quantity * item.price, 0)),
   );
 
-  addItem(item: CartItem) {
+  addItem(newItem: CartItem) {
     const items = this._items$.value;
-    const existing = items.find((i) => i.id === item.id);
+    const existingItem = items.find((i) => i.id === newItem.id);
 
-    if (existing) {
+    if (existingItem) {
       this._items$.next(
-        items.map((i) => (i.id === item.id ? { ...i, quantity: i.quantity + item.quantity } : i)),
+        items.map((i) => (i.id === newItem.id ? { ...i, quantity: i.quantity + newItem.quantity } : i)),
       );
     } else {
-      this._items$.next([...items, item]);
+      this._items$.next([...items, newItem]);
     }
   }
 
